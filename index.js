@@ -135,19 +135,19 @@
 
 // console.log(person);
 
-const fullname = "Fullname";
-const person = {
-  name: "Name One",
-  [fullname]: "FullName Value",
-  age: 27,
-  isMarried: true,
-  address: {
-    city: "City One",
-    street: "Street One",
-  },
-};
+// const fullname = "Fullname";
+// const person = {
+//   name: "Name One",
+//   [fullname]: "FullName Value",
+//   age: 27,
+//   isMarried: true,
+//   address: {
+//     city: "City One",
+//     street: "Street One",
+//   },
+// };
 
-console.log(person);
+// console.log(person);
 
 //function called Object.keys()
 
@@ -166,13 +166,117 @@ console.log(person);
 // } = person;
 // console.log(age);
 
-const {
-  address: { city, street },
-} = person;
+// const {
+//   address: { city, street },
+// } = person;
 
-console.log(street);
-// function hasOwnProperty()
-// in operator
-console.log(person.hasOwnProperty("fullname"));
-console.log("name" in person);
-console.log("fullname" in person);
+// console.log(street);
+// // function hasOwnProperty()
+// // in operator
+// console.log(person.hasOwnProperty("fullname"));
+// console.log("name" in person);
+// console.log("fullname" in person);
+// object -- data structure
+
+1; // for loops
+// for of  array and object
+// //  for in object only
+// const person = {
+//   "full name": "Full Name",
+//   age: 27,
+//   isMarried: true,
+// };
+
+// console.log(person["full name"]);
+// console.log(person.age);
+// console.log(person.isMarried);
+
+// const { ["full name"]: fullname, age } = person;
+
+// console.log(age);
+// console.log(fullname);
+// // for in loop , access or looping object
+// for (key in person) {
+//   console.log("key : ", key);
+//   console.log("value: ", person[key]);
+// }
+// object litral
+// const person = {
+//   name: "Zeba Ali",
+// };
+
+// // with the help Object constructor
+// //
+// const per = new Object({
+//   name: "Zeba ali",
+// });
+
+// console.log(per.name);
+
+// const student = {
+//   name: "Student one",
+// };
+// //...student  spread operator
+// student.age = 20;
+// // passed by Reference
+// // const studentCopy = { ...student }; // passed by value
+// // student.age = 30;
+
+// // console.log(studentCopy);
+
+// //
+// const studentTwo = {
+//   age: 28,
+//   ...student,
+// };
+
+// console.log(studentTwo);
+
+// const obj1 = {
+//   a: 1,
+//   b: 2,
+// };
+
+// const obj2 = {
+//   c: 3,
+//   d: 4,
+// };
+
+// const obj3 = { ...obj1, ...obj2 };
+
+// console.log(obj3);
+
+const obj1 = {
+  a: 1,
+  b: 2,
+  sum: function () {
+    return this.a + this.b;
+  },
+};
+
+console.log("sum: " + obj1.sum());
+// Object.freeze(obj1);
+
+// obj1.a = 21;
+// obj1.d = 20;
+// delete obj1.a;
+// console.log(obj1);
+
+Object.seal(obj1);
+obj1.a = 21;
+obj1.d = 30;
+console.log(obj1);
+
+console.log(Object.isSealed(obj1));
+// const obj2 = {
+//   c: 3,
+//   d: 4,
+// };
+
+// const obj3 = {
+//   e: 6,
+//   f: 7,
+// };
+// //static function of the object constructor
+// const obj4 = Object.assign({}, obj1, obj2, obj3);
+// console.log(obj4);
