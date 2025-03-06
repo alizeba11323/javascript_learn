@@ -246,28 +246,28 @@
 
 // console.log(obj3);
 
-const obj1 = {
-  a: 1,
-  b: 2,
-  sum: function () {
-    return this.a + this.b;
-  },
-};
+// const obj1 = {
+//   a: 1,
+//   b: 2,
+//   sum: function () {
+//     return this.a + this.b;
+//   },
+// };
 
-console.log("sum: " + obj1.sum());
-// Object.freeze(obj1);
+// console.log("sum: " + obj1.sum());
+// // Object.freeze(obj1);
 
+// // obj1.a = 21;
+// // obj1.d = 20;
+// // delete obj1.a;
+// // console.log(obj1);
+
+// Object.seal(obj1);
 // obj1.a = 21;
-// obj1.d = 20;
-// delete obj1.a;
+// obj1.d = 30;
 // console.log(obj1);
 
-Object.seal(obj1);
-obj1.a = 21;
-obj1.d = 30;
-console.log(obj1);
-
-console.log(Object.isSealed(obj1));
+// console.log(Object.isSealed(obj1));
 // const obj2 = {
 //   c: 3,
 //   d: 4,
@@ -280,3 +280,70 @@ console.log(Object.isSealed(obj1));
 // //static function of the object constructor
 // const obj4 = Object.assign({}, obj1, obj2, obj3);
 // console.log(obj4);
+// var a = 10;
+// console.log(this); // global object // window object
+
+// this.a = 10;
+// window.a = 10;
+
+// const obj1 = {
+//   a: 1,
+//   b: 2,
+//   print: function () {
+//     console.log(this.a + this.b);
+//   },
+// };
+
+// // function sum() {
+// //   console.log(this.a + this.b)
+// // }
+// //this substitution
+// function sum() {
+//   // console.log(this); // undefined non strict mode
+//   console.log(this);
+//   console.log(this.a + this.b);
+// }
+
+// //  call ,bind,apply
+
+// // call
+// sum.call(obj1);
+// // sum.call(obj1);
+// call,apply and bind
+// const person = {
+//   name: "Ram",
+//   age: 20,
+// };
+
+// // var name = "New Name";
+// // var age = 30;
+// function display(isMarried, address) {
+//   if (isMarried) {
+//     console.log(
+//       `my name is ${this.name} , i am ${this.age} years old`,
+//       address
+//     );
+//   } else {
+//     console.log(
+//       `my name is ${this.name} , i am ${this.age} years old, is Not Married`,
+//       address
+//     );
+//   }
+// }
+
+// const displayFn = display.bind(person);
+// displayFn(true, "Address");
+const person = {
+  name: "Ram",
+  age: 27,
+  print: function () {
+    const p = () => {
+      console.log(this);
+    };
+    p();
+  },
+};
+
+person.print();
+
+// factory function and prototype inheritance
