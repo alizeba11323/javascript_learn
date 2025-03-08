@@ -333,17 +333,117 @@
 
 // const displayFn = display.bind(person);
 // displayFn(true, "Address");
-const person = {
-  name: "Ram",
-  age: 27,
-  print: function () {
-    const p = () => {
-      console.log(this);
-    };
-    p();
-  },
-};
+// const person = {
+//   name: "Ram",
+//   age: 27,
+//   print: function () {
+//     const p = () => {
+//       console.log(this);
+//     };
+//     p();
+//   },
+// };
 
-person.print();
+// person.print();
 
 // factory function and prototype inheritance
+// factory function
+//constructor function
+// function student(studentName, age) {
+//   const obj = {};
+//   obj.name = studentName;
+//   obj.age = age;
+//   obj.checkAge = function () {
+//     if (this.age > 20) return "YES";
+//     else "NO";
+//   };
+//   return obj;
+// }
+// const student1 = student("Student One", 20);
+// console.log(student1);
+// const student1 = {
+//   name: "Student One",
+//   age: 20,
+//   checkAge() {
+//     if (this.age > 20) return "YES";
+//     else "NO";
+//   },
+// };
+// const student2 = student("Student Two", 21);
+// console.log(student2);
+// // const student2 = {
+// //   name: "Student Two",
+// //   age: 21,
+// //   checkAge() {
+// //     if (this.age > 20) return "YES";
+// //     else "NO";
+// //   },
+// // };
+
+// const student3 = {
+//   name: "Student Three",
+//   age: 22,
+//   checkAge() {
+//     if (this.age > 20) return "YES";
+//     else "NO";
+//   },
+// };
+
+// const student4 = {
+//   name: "Student Four",
+//   age: 23,
+//   checkAge() {
+//     if (this.age > 20) return "YES";
+//     else "NO";
+//   },
+// };
+
+// const student5 = {
+//   name: "Student Five",
+//   age: 24,
+//   checkAge() {
+//     if (this.age > 20) return "YES";
+//     else "NO";
+//   },
+// };
+
+//constructor function
+
+function Student(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+Student.prototype.checkAge = function () {
+  if (this.age > 20) return "YES";
+  else return "NO";
+};
+
+const student1 = new Student("Ravi", 20);
+const student2 = new Student("Raj", 23);
+const student3 = new Student("Shaam", 40);
+console.log(student2);
+console.log(student1);
+console.log(student3);
+
+const arr1 = new Array(1, 2, 3);
+console.log(arr1);
+Array.prototype.myPrintFunc = function () {};
+const arr = [1, 2, 3];
+const names = ["Name One", "Name2", "Name3"];
+console.log(names);
+
+const obj1 = {
+  name: "Name",
+  age: 21,
+};
+
+Object.prototype.isMarried = true;
+
+console.log(obj1.isMarried);
+console.log(obj1);
+// const obj2 = {
+//   name: "name1",
+//   age: 21,
+//   checkAge: function () {},
+// };
