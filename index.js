@@ -409,41 +409,150 @@
 
 //constructor function
 
-function Student(name, age) {
-  this.name = name;
-  this.age = age;
+// function Student(name, age) {
+//   this.name = name;
+//   this.age = age;
+// }
+
+// Student.prototype.checkAge = function () {
+//   if (this.age > 20) return "YES";
+//   else return "NO";
+// };
+
+// const student1 = new Student("Ravi", 20);
+// const student2 = new Student("Raj", 23);
+// const student3 = new Student("Shaam", 40);
+// console.log(student2);
+// console.log(student1);
+// console.log(student3);
+
+// const arr1 = new Array(1, 2, 3);
+// console.log(arr1);
+// Array.prototype.myPrintFunc = function () {};
+// const arr = [1, 2, 3];
+// const names = ["Name One", "Name2", "Name3"];
+// console.log(names);
+
+// const obj1 = {
+//   name: "Name",
+//   age: 21,
+// };
+
+// Object.prototype.isMarried = true;
+
+// console.log(obj1.isMarried);
+// console.log(obj1);
+// // const obj2 = {
+// //   name: "name1",
+// //   age: 21,
+// //   checkAge: function () {},
+// // };
+
+// const obj2 = {};
+
+// const obj3 = new Object();
+
+// console.log(obj2.__proto__);
+// console.log(Object.prototype);
+
+// const arr2 = [1, 2, 3];
+// console.log(arr2.__proto__.__proto__.__proto__);
+// console.log(Array.prototype);
+
+//constructor function
+
+// function Student(name, age) {
+//   this.name = name;
+//   this.age = age;
+// }
+
+// const student = new Function("");
+
+// // const student = new Student("Name One", 24);
+
+// console.dir(Student.__proto__.__proto__);
+// console.log(Object.prototype);
+// const obj = { name: 1 };
+// const obj2 = new Object({ name: 1 });
+// Object.prototype;
+// __proto__;
+// prototype[[prototype]]; // hidden property
+
+// const obj = {
+//   name: "Ravi",
+// };
+
+// const checkFunc = {
+//   talk() {
+//     console.log(`${this.name} is talking`);
+//   },
+// };
+
+// const obj3 = Object.create(checkFunc);
+
+// obj3.talk.call(obj);
+
+// const myObject = {
+//   city: "Madrid",
+// };
+// Object.setPrototypeOf(myObject, {
+//   greet: function () {
+//     console.log(`Greetings from ${this.city}`);
+//   },
+// });
+// console.log(Object.getPrototypeOf(myObject));
+
+// myObject.greet();
+
+// const obj1 = { name: "Name One" };
+// const obj2 = { age: 28 };
+
+// const mergeObj = Object.assign(obj1, obj2);
+// console.log(obj1 === mergeObj);
+
+// const o = {
+//   a: 1,
+//   b: 2,
+//   // __proto__ sets the [[Prototype]]. It's specified here
+//   // as another object literal.
+//   __proto__: {
+//     b: 3,
+//     c: 4,
+//     __proto__: {
+//       d: 5,
+//     },
+//   },
+// };
+
+// console.log(o);
+
+// hoisting
+// function work behind the send // javascript excutes  the code the schene
+//hoisting
+// console.log(a);
+// console.log(print12);
+
+// var a = 1;
+// var b = 2;
+// var sum = a + b;
+// console.log(sum);
+
+// var print12 = () => {
+//   console.log("sum print");
+// };
+
+// scope chaining
+//scope chaining
+var a = 1; //let const
+
+function printa() {
+  var b = 2;
+  function printsum() {
+    var c = 3;
+    console.log(b + c);
+  }
+  printsum();
+  console.log(a);
 }
 
-Student.prototype.checkAge = function () {
-  if (this.age > 20) return "YES";
-  else return "NO";
-};
-
-const student1 = new Student("Ravi", 20);
-const student2 = new Student("Raj", 23);
-const student3 = new Student("Shaam", 40);
-console.log(student2);
-console.log(student1);
-console.log(student3);
-
-const arr1 = new Array(1, 2, 3);
-console.log(arr1);
-Array.prototype.myPrintFunc = function () {};
-const arr = [1, 2, 3];
-const names = ["Name One", "Name2", "Name3"];
-console.log(names);
-
-const obj1 = {
-  name: "Name",
-  age: 21,
-};
-
-Object.prototype.isMarried = true;
-
-console.log(obj1.isMarried);
-console.log(obj1);
-// const obj2 = {
-//   name: "name1",
-//   age: 21,
-//   checkAge: function () {},
-// };
+printa();
