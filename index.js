@@ -543,16 +543,283 @@
 
 // scope chaining
 //scope chaining
-var a = 1; //let const
+// var a = 1; //let const
 
-function printa() {
-  var b = 2;
-  function printsum() {
-    var c = 3;
-    console.log(b + c);
-  }
-  printsum();
-  console.log(a);
+// function printa() {
+//   var b = 2;
+//   function printsum() {
+//     var c = 3;
+//     console.log(b + c);
+//   }
+//   printsum();
+//   console.log(a);
+// }
+
+// printa();
+
+// // // let const get its memory
+// // whether let const is hoisted or not
+//temporal dead zone
+// let a = 10; // block scope
+// var a = 10; // global scope, function
+
+// const
+//block
+// compound statement
+// {
+//   let a = 10;
+//   let c = 20;
+//   let sum = 30;
+// }
+// var isMarried = false;
+// if (isMarried === true) {
+
+// }
+// else console.log("Not isMarried");
+
+// block scope
+
+//block
+
+//shadowing the variables;
+// var c = 400; // global c = 400
+// console.log(c);
+// {
+//   let a = 10; // block
+//   const b = 20; // block
+//   var c = 40;
+//   console.log(a);
+//   console.log(b);
+//   console.log(c);
+// }
+
+// // console.log(a);
+// // console.log(b);
+// console.log(c);
+
+// let a = 10; //script
+// {
+//   let a = 20; //block
+//   let b = 30;
+//   var c = 40;
+//   console.log(a);
+//   20;
+//   console.log(b);
+//   30;
+//   console.log(c);
+//   40;
+// }
+
+// console.log(a);
+//illegal shadowing
+// var a = 10;
+// {
+//   let a = 20;
+// }
+
+// var a = 10; // global scope
+// let b = 20; //script
+// const c = 30;
+// {
+//   const c = 10; // block
+//   let b = 30; // block
+// }
+
+// let const is stored value behind the schene
+// shadowing
+// illegal
+//block blockscope
+
+// let a = 10;
+// {
+//   let a = 20;
+//   {
+//     let a = 30;
+//     console.log(a);
+//   }
+//   console.log(a);
+// }
+
+//closures
+
+// function outer() {
+//   let a = 10;
+//   function inner() {
+//     let a = 11;
+//     console.log(a);
+//   }
+//   console.log(a);
+//   inner();
+// }
+
+// outer();
+// var a = 10;
+// var b = 20;
+// function outer() {
+//   return function inner() {
+//     console.log(a, b);
+//   };
+// }
+// var c = outer();
+
+// console.dir(c);
+//stale closure
+// async javascript
+// callaback
+// promises
+// async await
+// function myClosure() {
+//   let count = 1;
+//   let message = "Hello " + count;
+//   function showMessage() {
+//     console.log(message);
+//   }
+//   function increment() {
+//     count += 1;
+//     message = "Hello " + count;
+//   }
+
+//   return {
+//     showMessage,
+//     increment,
+//   };
+// }
+
+// const { showMessage, increment } = myClosure();
+// console.dir(showMessage);
+// showMessage();
+// increment();
+// showMessage();
+
+//async javascript
+
+// setTimeout(function () {
+//   console.log("Welcome to the website");
+// }, 5000);
+
+// console.log("Hello");
+// setInterval(function () {
+//   console.log("Hello ");
+// }, 1000);
+
+// console.log(this);
+// console.log(window);
+
+// let a = 10;
+// let b = 20;
+// let sum = a + b;
+
+// function show() {
+//   console.log("Welcome");
+// }
+// show();
+// console.log(sum);
+
+// callback function
+//higher order function
+// function outer(cb) {}
+// //callback function
+// function inner() {}
+
+// outer(inner);
+
+//callback function
+// callback disadvantages
+// promises
+// async await
+
+//whenever you want to pass a function to another function  the function you pass its called callback function and the upper function is called higherorder functio
+//hoisting
+
+// console.log(a);
+// console.log(sum(2, 3));
+// var a = 10;
+
+// function sum(num1, num2) {
+//   return num1 + num2;
+// }
+// console.log(x);
+// var x = 1;
+
+// if (x === 1) {
+//   var x = 2;
+
+//   console.log(x);
+// }
+
+// console.log(x);
+
+// function foo() {
+//   var x = 1;
+//   function bar() {
+//     var y = 2;
+//     console.log(x);
+//     console.log(y);
+//   }
+//   bar();
+//   console.log(x);
+//   console.log(y);
+// }
+
+// foo();
+
+// var a = 1;
+// function a() {}
+// console.log(a);
+// var let const
+
+// var a = 10;
+// // global scope;
+
+// function show() {
+//   var a = 20;
+//   console.log(a);
+// }
+
+// show();
+
+// console.log(a); // undefined
+// var a;
+
+// console.log(x); // not defined
+
+// console.log(a);
+// var a = 10;
+// let a = 20;
+// let a = 30;
+
+// let a = 10;
+// a = 20;
+
+// const b = 20;
+// // console.log(a); //temporal dead zone
+// // const a = 10;
+// // const a = 20;
+// console.log(a);
+
+//variable shadowing
+var p = 20; // global  p = 20
+{
+  var p = 30;
+  console.log(p); //30
 }
 
-printa();
+console.log(p); //30
+
+// const a = 10;
+// {
+//   const a = 30;
+
+//   console.log(a);
+// }
+
+// console.log(a);
+
+var a = 10; //global
+function print() {
+  var a = 30; // function scope
+  console.log(a); //
+}
+
+print();
+console.log(a); //
