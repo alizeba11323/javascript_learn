@@ -798,13 +798,13 @@
 // console.log(a);
 
 //variable shadowing
-var p = 20; // global  p = 20
-{
-  var p = 30;
-  console.log(p); //30
-}
+// var p = 20; // global  p = 20
+// {
+//   var p = 30;
+//   console.log(p); //30
+// }
 
-console.log(p); //30
+// console.log(p); //30
 
 // const a = 10;
 // {
@@ -815,11 +815,80 @@ console.log(p); //30
 
 // console.log(a);
 
-var a = 10; //global
-function print() {
-  var a = 30; // function scope
-  console.log(a); //
+// var a = 10; //global
+// function print() {
+//   var a = 30; // function scope
+//   console.log(a); //
+// }
+
+// print();
+// console.log(a);
+
+// // function declaration
+
+// //function expression
+// const length = function () {
+
+//     }
+// function length() {
+//   console.log("length of the function");
+// }
+
+// function invokation
+// length()
+
+// var a = 20;
+// // function declaration/ function statement
+// function length() {
+//   var a = 10;
+//   console.log(a);
+// }
+// //function invocation
+// length();
+
+// //function expression
+// const length1 = function () {
+//   console.log("Length One");
+// };
+// length1();
+
+//hoisting;
+// a();
+// function a() {
+//   console.log("Print Function");
+// }
+// // function expression, name function expression
+// var b = function () {
+//   console.log("Show Function");
+// };
+// name function expression
+
+// b();
+
+// //anonymous function
+
+function sum(a, b) {
+  return a + b;
 }
 
-print();
-console.log(a); //
+sum(1, 2);
+
+//arrow function
+
+const sum1 = (a, b) => a + b;
+
+sum1();
+
+//this keyword  in javascript
+
+//first class function
+
+function greeting() {
+  console.log("Welcome ");
+}
+
+function outer(cb) {
+  return function () {};
+}
+
+outer(greeting);
