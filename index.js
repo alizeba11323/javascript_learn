@@ -892,3 +892,55 @@ function outer(cb) {
 }
 
 outer(greeting);
+
+//object
+// let name = "rajeev"; //string
+// let age = 20;
+// let isMarried = true;
+//.(dot notation)
+
+const ID = "id";
+const fullname = "full name";
+
+// object  propperties
+//object methods
+const person = {
+  [ID]: 1,
+  name: "Rajeev",
+  age: 20,
+  isMarried: true,
+  address: {
+    city: "City",
+    street: "Street",
+    zipcode: "192883",
+  },
+  [fullname]: " Mr Rajeev",
+  setName: function () {
+    // console.log(this);
+  },
+};
+// console.log(person);
+person.setName();
+// console.log(person);
+
+// console.log(person);
+// console.log(person.name);
+// console.log(person["name"]);
+// console.log(person.age);
+// console.log(person.address);
+// console.log(person.address.street);
+// console.log(person["full name"]);
+//for in loop
+
+// for (let key in person) {
+//   console.log(key);
+//   console.log(person[key]);
+//   // console.log(person[key])
+// }
+// spread operator
+const newPerson = { ...person };
+console.log(newPerson);
+// object destructuring
+const { name: person_name, age: person_age } = person;
+
+console.log(person_name, person_age);
